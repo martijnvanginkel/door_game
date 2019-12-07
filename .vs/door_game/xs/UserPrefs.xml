@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{3411CD05-924E-BC31-0F8D-BF754CA5024F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DimensionData.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="66" Column="41" />
+      <File FileName="Assets/Scripts/Door.cs" Line="32" Column="54" />
+      <File FileName="Assets/Scripts/Room.cs" Line="85" Column="35" />
+      <File FileName="Assets/Scripts/CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DimensionManager.cs" Line="8" Column="61" />
+      <File FileName="Assets/Scripts/Item.cs" Line="7" Column="30" />
+      <File FileName="Assets/Scripts/ScriptableObject.cs" Line="5" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d3edbd83-ec8e-429a-a6e2-7b92170579da" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
