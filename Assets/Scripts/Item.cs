@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    [SerializeField] private DimensionData m_Dimension;
+    [SerializeField] protected DimensionData m_DimensionData;
     public DimensionData DimensionData
     {
-        get { return m_Dimension; }
-        set { m_Dimension = value; }
+        get { return m_DimensionData; }
+        set { m_DimensionData = value; }
     }
 
     private Room m_MyRoom;

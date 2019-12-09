@@ -51,7 +51,7 @@ public class DimensionManager : MonoBehaviour
     }
 }
 
-public enum DimensionState
+public enum Dimension
 {
     First,
     Second

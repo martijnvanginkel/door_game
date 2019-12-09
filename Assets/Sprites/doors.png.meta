@@ -102,8 +102,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 19
-        height: 24
+        width: 16
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,7 +111,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa604c5019645408392b26dc06d9b08f
+      spriteID: 5cd57361cd3474d58b95bcef5c743e28
       vertices: []
       indices: 
       edges: []
@@ -120,10 +120,10 @@ TextureImporter:
       name: doors_1
       rect:
         serializedVersion: 2
-        x: 20
+        x: 17
         y: 0
-        width: 19
-        height: 24
+        width: 16
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,7 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c420360d74e74681941dd4680d453be
+      spriteID: ba0fb730a98bb46cea5a7dbe2c5e421a
       vertices: []
       indices: 
       edges: []
@@ -139,7 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3998cde7a8e724cbaa5cfa1028149b5c
+    spriteID: 88bdb3d23651d4cdb811426907bb9430
     vertices: []
     indices: 
     edges: []

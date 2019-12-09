@@ -6,6 +6,6 @@ using UnityEngine;
 public class DimensionData : ScriptableObject
 {
     public string Name;
-    public DimensionState Dimension;
+    public Dimension Dimension;
     public Color Color;
 }

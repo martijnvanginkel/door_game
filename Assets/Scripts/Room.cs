@@ -3,6 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+public class ItemTuple
+{
+    private Dimension m_InDimension;
+    public Dimension InDimension
+    {
+        get { return m_InDimension; }
+        set { m_InDimension = value; }
+    }
+
+    private Item m_MyItem;
+    public Item MyItem
+    {
+        get { return m_MyItem; }
+        set { m_MyItem = value; }
+    }
+}
+
 public class Room : MonoBehaviour
 {
     private float m_Width;
@@ -17,12 +34,14 @@ public class Room : MonoBehaviour
     [SerializeField] private BoxCollider2D m_LeftCollider;
     [SerializeField] private BoxCollider2D m_RightCollider;
 
-    private Color m_WhiteColor;
-    private Color m_BlueColor;
-
     [SerializeField] private GameObject m_ItemsParent;
 
-    private Dictionary<DimensionState, Item> m_ItemDictionary = new Dictionary<DimensionState, Item>();
+    private List<ItemTuple> m_ItemTupleList = new List<ItemTuple>();
+    public List<ItemTuple> ItemTupleList
+    {
+        get { return m_ItemTupleList; }
+        set { m_ItemTupleList = value; }
+    }
 
     private void OnEnable()
     {
@@ -38,6 +57,7 @@ public class Room : MonoBehaviour
     {
         InitializeRoom();
         CreateDimensionLists();
+        StartSituation();
     }
 
     private void InitializeRoom()
@@ -52,9 +72,6 @@ public class Room : MonoBehaviour
         m_LeftCollider.offset = new Vector2(((m_Width / 2f) + 0.5f) * -1f, -((m_Height / 2f) - 0.5f));
         m_RightCollider.offset = new Vector2(((m_Width / 2f) + 0.5f), -((m_Height / 2f) - 0.5f));
         m_FloorCollider.offset = new Vector2(0f, -((m_Height / 2f) + 0.5f));
-
-        m_WhiteColor = new Color(255f, 255f, 255f, 255f);
-        m_BlueColor = new Color(36f, 159, 222f, 255f);
     }
 
     private void CreateDimensionLists()
@@ -62,38 +79,39 @@ public class Room : MonoBehaviour
         foreach (Transform child in m_ItemsParent.transform)
         {
             Item itemScript = child.GetComponent<Item>();
-
             itemScript.MyRoom = this;
-            if (itemScript.DimensionData.Dimension != null)
-            {
-                m_ItemDictionary.Add(itemScript.DimensionData.Dimension, itemScript);
-            }
-            else
-            {
-                Debug.Log("Item wasn't assigned a dimension : " + child.gameObject.name);
-                return;
-            }
+
+            ItemTuple newItemTuple = new ItemTuple();
+            newItemTuple.InDimension = itemScript.DimensionData.Dimension;
+            newItemTuple.MyItem = itemScript;
+            m_ItemTupleList.Add(newItemTuple);
         }   
     }
 
     private void TransformRoom(DimensionData newData, DimensionData oldData)
     {
-        List<Item> m_NewItems = new List<Item>();
-        List<Item> m_OldItems = new List<Item>();
-
-        m_NewItems.Add(m_ItemDictionary[newData.Dimension]);
-        m_OldItems.Add(m_ItemDictionary[oldData.Dimension]);
-
-        foreach (Item oldItem in m_OldItems)
+        foreach (ItemTuple itemTuple in m_ItemTupleList)
         {
-            oldItem.gameObject.SetActive(false);
+            if (itemTuple.InDimension == oldData.Dimension)
+            {
+                itemTuple.MyItem.gameObject.SetActive(false);
+            }
+            else if (itemTuple.InDimension == newData.Dimension)
+            {
+                itemTuple.MyItem.gameObject.SetActive(true);
+            }
         }
-
         m_BackgroundRenderer.color = newData.Color;
+    }
 
-        foreach (Item newItem in m_NewItems)
+    private void StartSituation()
+    {
+        foreach (ItemTuple itemTuple in m_ItemTupleList)
         {
-            newItem.gameObject.SetActive(true);
+            if (itemTuple.InDimension == Dimension.Second)
+            {
+                itemTuple.MyItem.gameObject.SetActive(false);
+            }
         }
     }
 

@@ -6,12 +6,12 @@ public class CameraController : MonoBehaviour
 {
     private void OnEnable()
     {
-        PlayerController.OnPlayerEnteredDoor += MoveToNewRoom;
+        Door.OnDoorEntered += MoveToNewRoom;
     }
 
     private void OnDisable()
     {
-        PlayerController.OnPlayerEnteredDoor -= MoveToNewRoom;
+        Door.OnDoorEntered -= MoveToNewRoom;
     }
 
     private void MoveToNewRoom(Door enteredDoor)

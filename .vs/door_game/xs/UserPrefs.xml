@@ -1,18 +1,17 @@
 ﻿<Properties StartupConfiguration="{3411CD05-924E-BC31-0F8D-BF754CA5024F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DimensionData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="66" Column="41" />
-      <File FileName="Assets/Scripts/Door.cs" Line="32" Column="54" />
-      <File FileName="Assets/Scripts/Room.cs" Line="85" Column="35" />
-      <File FileName="Assets/Scripts/CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DimensionManager.cs" Line="8" Column="61" />
-      <File FileName="Assets/Scripts/Item.cs" Line="7" Column="30" />
-      <File FileName="Assets/Scripts/ScriptableObject.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/Inventory/InventorySlot.cs" Line="51" Column="31" />
+      <File FileName="Assets/Scripts/Inventory/Inventory.cs" Line="117" Column="42" />
+      <File FileName="Assets/Scripts/Inventory/SlotsHolder.cs" Line="123" Column="30" />
+      <File FileName="Assets/Scripts/Inventory/DigitalItem.cs" Line="10" Column="29" />
+      <File FileName="Assets/Scripts/ItemData.cs" Line="12" Column="21" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="117" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d3edbd83-ec8e-429a-a6e2-7b92170579da" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="016b0abd-6145-4afc-a69b-25ab8a20a0e1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
